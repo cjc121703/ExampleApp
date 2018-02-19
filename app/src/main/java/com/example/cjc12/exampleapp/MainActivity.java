@@ -24,21 +24,21 @@ public class MainActivity extends AppCompatActivity implements SearchFragment.On
             Fragment selectedFragment = null;
 
             switch (item.getItemId()) {
-                case R.id.navigation_home:
+                case R.id.navigation_favorites:
                    FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
                    selectedFragment = FavoritesFragment.newInstance("","");
                    transaction.replace(R.id.content, selectedFragment);
                    transaction.commit();
                    return true;
-                case R.id.navigation_dashboard:
+                case R.id.navigation_search:
                     FragmentTransaction transaction2 = getSupportFragmentManager().beginTransaction();
                     selectedFragment = SearchFragment.newInstance("","");
                     transaction2.replace(R.id.content, selectedFragment);
                     transaction2.commit();
                     return true;
-                case R.id.navigation_notifications:
+                case R.id.navigation_checklist:
                     FragmentTransaction transaction3 = getSupportFragmentManager().beginTransaction();
-                    selectedFragment = SearchFragment.newInstance("","");
+                    selectedFragment = ChecklistFragment.newInstance("","");
                     transaction3.replace(R.id.content, selectedFragment);
                     transaction3.commit();
                     return true;
@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity implements SearchFragment.On
         transaction.commit();
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation.setSelectedItemId(R.id.navigation_search);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
 

@@ -5,9 +5,25 @@
     tools:context="com.example.cjc12.exampleapp.SearchFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <GridLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
-
+        android:columnCount="3">
+        <Button
+            android:layout_columnSpan="2"
+            android:text="I span two columns"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textSize="28dip"
+            android:background="@color/colorAccent"
+            />
+        <Button
+            android:layout_columnSpan="1"
+            android:background="@color/colorPrimary"
+            android:textSize="28dip"
+            android:text="Hi"
+            />
+        <TextView
+            android:text="yup"/>
+    </GridLayout>
 </FrameLayout>
